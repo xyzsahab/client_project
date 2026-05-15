@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Toffee Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h2 class="logo">Bajrang Traders</h2>
+            <p>Curating perfection... <span id="progressText">0</span>%</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Main Content wrapper (z-index 2) to slide over fixed footer -->
+    <main class="main-content">
+        <nav class="navbar">
+            <div class="logo">Bajrang Traders</div>
+            <div class="links">
+                <a href="#showcase">Showcase</a>
+                <a href="#order-button">Login</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section: At the very top (Allows native refresh on mobile) -->
+        <header class="hero" id="home">
+            <h1>Bajrang <span>Traders</span></h1>
+            <p>Your trusted partner in premium confectioneries and quality goods.</p>
+        </header>
+
+        <!-- 1st Animation Section: At the very top -->
+        <section id="showcase" class="canvas-section">
+            <div class="canvas-container">
+                <canvas id="animationCanvas"></canvas>
+
+                <div class="scroll-text-overlay">
+                    <div class="scroll-text-item item-1">
+                        <h3>A World of Quality</h3>
+                        <p>Explore our vast collection of premium sourced sweets.</p>
+                    </div>
+                    <div class="scroll-text-item item-2">
+                        <h3>Trusted for Excellence</h3>
+                        <p>Only the finest global brands make it to our trading network.</p>
+                    </div>
+                    <div class="scroll-text-item item-3">
+                        <h3>A Symphony of Flavor</h3>
+                        <p>Bring home the ultimate premium tasting experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Snap Points to create height and force scroll stops -->
+            <div class="snap-point" id="showcase-start"></div>
+            <div class="snap-point" id="showcase-text1"></div>
+            <div class="snap-point" id="showcase-text2"></div>
+            <div class="snap-point" id="showcase-text3"></div>
+            <div class="snap-point" id="showcase-end"></div>
+        </section>
+
+        <!-- 2nd Animation Section: The Place Order Login Animation -->
+        <section id="order" class="canvas-section order-section" style="height: 200vh; position: relative;">
+            <div class="canvas-container">
+                <canvas id="animationCanvas2"></canvas>
+                <div class="order-button-container">
+                    <button id="placeOrderBtn" class="place-order-btn">Place Order</button>
+                </div>
+            </div>
+
+            <!-- Absolute Snap Point perfectly calculated for Frame 50 -->
+            <div class="snap-point" id="order-button"
+                style="position: absolute; top: 23.5%; height: 10px; width: 100%; pointer-events: none;"></div>
+        </section>
+
+        <!-- About & Services: At the very end above footer -->
+        <section class="content-section" id="about">
+            <div class="container">
+                <div class="text-block">
+                    <h2>About Us</h2>
+                    <p>We believe in offering products that speak for themselves. Our journey started with a simple
+                        idea: bringing the world's most premium, rich, and unforgettable treats directly to our partners and customers. Every product we trade is meticulously selected to ensure the highest standards.</p>
+                </div>
+                <div class="text-block">
+                    <h2>Our Mission</h2>
+                    <p>To redefine premium trading in the modern market. We scour the globe for the finest goods, building lasting partnerships to bring unparalleled taste and quality directly to you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="content-section alternate">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Premium Wholesale</h3>
+                        <p>A highly curated catalog of the world's most sought-after goods available for bulk distribution.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Retail Excellence</h3>
+                        <p>Premium delivery options and bespoke packaging for our direct retail customers.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Global Sourcing</h3>
+                        <p>Trust our expert network to source and import the finest products tailored for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fixed Footer underneath main content -->
+    <footer class="footer">
+        <div class="container">
+            <h2>Partner with perfection.</h2>
+            <p>Head Office: 123 Trading Lane, Commercial District, SC 45678</p>
+            <p>Contact: sales@bajrangtraders.in</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Trade</a>
+            </div>
+            <p class="copyright">&copy; 2026 Bajrang Traders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Spacer to allow scrolling past the main-content and reveal footer -->
+    <div class="footer-spacer snap-point"></div>
+
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
